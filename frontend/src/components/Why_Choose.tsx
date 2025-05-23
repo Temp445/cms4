@@ -3,6 +3,8 @@
 import { CheckCircle,MoveRight } from 'lucide-react'
 import Image from 'next/image'
 import CMS from '../assets/CMS4.png'
+import CMS1 from '../assets/image5.jpg'
+import arrow from '../assets/arrow1.png'
 import Link from 'next/link'
 
 
@@ -11,15 +13,27 @@ const Why_Choose = () => {
 
   return (
     <section className="pt-16 container mx-auto ">
-      <div className="container mx-auto px-2 md:px-4">
-        <div className="flex flex-col xl:flex-row items-center gap-8 xl:gap-16 container">
-          <div className="w-full md:w-8/12  xl:w-5/12 relative">
-            <div className="relative z-10 bg-slate-100 p-1 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+      <div className=" mx-auto px-2 md:px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0 xl:gap-16 container">
+          <div className="w-full md:w-8/12 lg:w-10/12  xl:w-6/12 relative">
+            <div className="relative z-10  xl:bg-none lg:shadow-none p-1 rounded-lg shadow-lg transform  transition-transform duration-300">
               <div className="mx-auto  relative">
+                     <Image 
+                  src={arrow} 
+                  alt="ACE CMS" 
+                  className="hidden lg:block h-52 w-32 absolute lg:w-28 lg:right-0 xl:right-20 2xl:right-48 top-10  xl:-rotate-12 " 
+                />
+                <Image 
+                  src={CMS1} 
+                  alt="ACE CMS" 
+                  className="hidden lg:block object-cover w-80 h-52 rounded-lg hover:scale-105" 
+                />
+              </div>
+              <div className="mx-auto  relative mt-5">
                 <Image 
                   src={CMS} 
                   alt="ACE CMS" 
-                  className="object-cover w-full h-full rounded-lg" 
+                  className="object-cover w-full h-full rounded-lg hover:scale-105" 
                 />
               </div>
             </div>
@@ -33,8 +47,8 @@ const Why_Choose = () => {
               Why Choose Us?
             </div>
             
-            <h2 className="text-2xl md:3xl 2xl:text-4xl font-bold text-gray-800 leading-tight">
-               ACE CMS – Smart <span className='text-sky-800 mr-2'>Calibration Management</span> <br className='hidden lg:block' />Made Simple
+            <h2 className="text-2xl md:3xl  2xl:text-4xl font-bold text-gray-800 leading-tight">
+               ACE CMS – Smart <span className='text-sky-800 mr-2'>Calibration Management</span> <br className='hidden xl:block' />Made Simple
               <span className="text-blue-600"></span>
             </h2>
             
@@ -49,7 +63,8 @@ const Why_Choose = () => {
                 "Calibrate smarter, not harder.",
                 "MSA done in minutes—not hours.",
                 "Scan it. Know it. Done.",
-                "Your calibration, in your pocket."
+                "Your calibration, in your pocket.",
+                "100% Cloud-Based, No Data Loss"
               ].map((item, index) => (
                 <div 
                   key={index} 

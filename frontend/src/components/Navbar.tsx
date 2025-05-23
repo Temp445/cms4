@@ -23,7 +23,7 @@ const Navbar: FC = () => {
     <>
       <nav className="flex items-center justify-between md:pt-5 lg:pb-10 px-4 md:px-0 lg:px-6 relative">
         <div className="md:flex items-center hidden ">
-          <div className="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-white flex gap-1">
+          <Link href="/" className="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-white flex gap-1">
             <Image
               src={logo}
               alt="logo"
@@ -32,7 +32,7 @@ const Navbar: FC = () => {
               className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12  "
             />
             <span className="mt-2">ACE CMS </span>
-          </div>
+          </Link>
         </div>
 
         <div className="hidden">
@@ -51,7 +51,7 @@ const Navbar: FC = () => {
         <div className="hidden md:flex items-center space-x-2">
           <Link
             href="#features"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-600"
+            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <Star className="w-4 h-4 mr-2" />
             Features
@@ -59,15 +59,15 @@ const Navbar: FC = () => {
 
           <Link
             href="#pricing"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-600"
+            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <DollarSign className="w-4 h-4 mr-2" />
             Pricing
           </Link>
 
           <Link
-            href="#contact"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-600"
+            href="/BookDemo"
+            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <FileText className="w-4 h-4 mr-2" />
             Book A Demo
@@ -75,7 +75,7 @@ const Navbar: FC = () => {
 
           <Link
             href="#client"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-sky-600"
+            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <Users className="w-4 h-4 mr-2" />
             Clients
@@ -88,7 +88,7 @@ const Navbar: FC = () => {
               <Link
                 href="#features"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center text-gray-800 hover:text-purple-600 text-base font-semibold"
+                className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <Star className="w-4 h-4 mr-2" />
                 Feature
@@ -97,7 +97,7 @@ const Navbar: FC = () => {
               <Link
                 href="#pricing"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center text-gray-800 hover:text-purple-600 text-base font-semibold"
+                className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <DollarSign className="w-4 h-4 mr-2" />
                 Pricing
@@ -106,7 +106,7 @@ const Navbar: FC = () => {
               <Link
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center text-gray-800 hover:text-purple-600 text-base font-semibold"
+                className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <FileText className="w-4 h-4 mr-2" />
                 Book A Demo
@@ -115,7 +115,7 @@ const Navbar: FC = () => {
               <Link
                 href="#client"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center text-gray-800 hover:text-purple-600 text-base font-semibold"
+                className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <Users className="w-4 h-4 mr-2" />
                 Clients

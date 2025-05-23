@@ -9,7 +9,7 @@ const Banner = () => {
     
   
   return (
-         <div className='bg-sky-800 mt-8 md:mt-10'>
+         <div className='bg-blue-600 mt-8 md:mt-10'>
         
         <div className="min-h-fit  flex flex-col lg:flex-row items-center justify-center p-6 py-5 px-10  container mx-auto relative">
          <div className='hidden lg:block absolute w-5 h-5 border border-gray-400 z-10 bottom-5 left-5 rotate-12 rounded-full'></div>

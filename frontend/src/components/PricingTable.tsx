@@ -1,16 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-// import { SiMoneygram } from 'react-icons/si';
+import { SiMoneygram } from 'react-icons/si';
 import { LuSquareArrowOutUpRight } from 'react-icons/lu';
 
 interface Feature {
   name: string;
-  Basic: boolean;
-  BasicNote?: string;
+  Essential: boolean;
+  EssentialNote?: string;
   BasicPlus: boolean;
   BasicPlusNote?: string;
-
+  premium: boolean;
+  premiumNote?: string;
 }
 
 interface Plan {
@@ -31,29 +32,33 @@ interface FeatureIconProps {
 
 const PricingTable: React.FC = () => {
   const features: Feature[] = [
-    { name: 'Excel Data Migration', Basic: true, BasicPlus: true },
-    { name: 'Audit-Ready Storage', Basic: true, BasicNote: '', BasicPlus: true, BasicPlusNote: '' },
-    { name: 'Smart Internal Calibration', Basic: true, BasicPlus: true },
-    { name: 'MSA 4th Edition Automation', Basic: false, BasicPlus: true },
-    { name: 'QR / Barcode Sticker Generation', Basic: false, BasicNote: '', BasicPlus: true, BasicPlusNote: '' },
-    { name: 'Android Mobile App Access', Basic: true, BasicPlus: true },
-    { name: 'Live Calibration Status Dashboard', Basic: false, BasicPlus: true },
-    { name: 'Calibration Reports & Certificates', Basic: true, BasicNote: '', BasicPlus: true, BasicPlusNote: '' },
-    { name: 'Secure Cloud Storage', Basic: true, BasicPlus: true },
+    { name: 'User Limit', Essential: true, EssentialNote: '5', BasicPlus: true, BasicPlusNote: '15', premium: true, premiumNote: 'Unlimited' },
+    { name: 'External Calibration Certificate Upload', Essential: true, BasicPlus: true, premium: true },
+    { name: 'Calibration History & Reports', Essential: true, EssentialNote: '', BasicPlus: true, BasicPlusNote: '', premium: true, premiumNote: '' },
+    { name: 'Email Alerts for Calibration Due Dates', Essential: true, BasicPlus: true, premium: true },
+    { name: 'Add & Track Instruments & Locations', Essential: true, BasicPlus: true, premium: true },
+    { name: 'QR/Barcode Generator & Scan-to-View', Essential: true, EssentialNote: '', BasicPlus: true, BasicPlusNote: '', premium: true },
+    { name: 'Internal Calibration Certificate Module', Essential: false, BasicPlus: true, premium: true },
+    { name: 'Wear Pattern & Cost Analysis', Essential: false, BasicPlus: true, premium: true },
+    { name: 'MSA 4th Edition Compliance Support', Essential: false, EssentialNote: '', BasicPlus: false, BasicPlusNote: '', premium: true },
+    { name: 'Android App Access', Essential: true, BasicPlus: true, premium: true },
+    { name: 'Custom Logos on Reports ', Essential: true, BasicPlus: true, premium: true },
+    { name: 'Custom User Roles & Permissions', Essential: true, BasicPlus: true, premium: true },
+    { name: 'API & Advanced Data Export', Essential: true, BasicPlus: true, premium: true },
   ];
 
   const plans: Plan[] = [
     {
-      name: 'Basic',
+      name: 'Essential',
       desc: 'Best for calibration beginners',
       buttonText: 'Subscribe Now',
       buttonlink: '#',
-      buttonClass: 'bg-none border text-black hover:bg-sky-500 hover:text-white',
+      buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: false,
       tag: '',
     },
     {
-      name: 'Basic Plus',
+      name: 'Standard',
       desc: 'For growing teams needing automation',
       buttonText: 'Subscribe Now',
       buttonlink: '#',
@@ -63,7 +68,7 @@ const PricingTable: React.FC = () => {
     },
     {
       name: 'Pro',
-      desc: 'For large teams requiring full control',
+      desc: 'For large teams needing full control',
       buttonText: 'Subscribe Now',
       buttonlink: '#',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
@@ -73,8 +78,8 @@ const PricingTable: React.FC = () => {
   ];
 
   const [sliderValues, setSliderValues] = useState<{ [key: string]: number }>({
-    Basic: 100,
-    'Basic Plus': 100,
+    Essential: 100,
+    Standard: 100,
     Pro: 100,
   });
 
@@ -89,12 +94,12 @@ const PricingTable: React.FC = () => {
   );
 
   const getFeatureKey = (planName: string) => {
-    if (planName === 'Basic Plus') return 'BasicPlus';
-    if (planName === 'Pro') return 'Pro';
-    return 'Basic';
+    if (planName === 'Standard') return 'BasicPlus';
+    if (planName === 'Pro') return 'premium';
+    return 'Essential';
   };
 
-  const FeatureList = (features: Feature[], key: string, planName: string) =>
+  const renderFeatureList = (features: Feature[], key: string, planName: string) =>
     features.map((feature, i) => {
       const isAvailable = feature[key as keyof Feature] as boolean;
       const note = feature[`${key}Note` as keyof Feature] as string | undefined;
@@ -105,7 +110,7 @@ const PricingTable: React.FC = () => {
           </div>
           <span className={isAvailable ? 'text-gray-800' : 'text-gray-500'}>
             {feature.name}
-            {note && <span className="text-gray-500 text-sm"> {note}</span>}
+            {note && <span className="text-sky-600  lg:font-bold ml-1">- {note}</span>}
           </span>
         </div>
       );
@@ -113,19 +118,19 @@ const PricingTable: React.FC = () => {
 
   const calculatePrice = (plan: string, value: number): number => {
     const baseValues = {
-      Basic: 42000,
-      'Basic Plus': 54000,
+      Essential: 42000,
+      Standard: 54000,
       Pro: 66000,
     };
 
     const tiers = {
-      Basic: [
+      Essential: [
         { min: 101, max: 250, perStep: 1750 },
         { min: 251, max: 500, perStep: 750 },
         { min: 501, max: 750, perStep: 625 },
         { min: 751, max: 1000, perStep: 500 },
       ],
-      'Basic Plus': [
+      Standard: [
         { min: 101, max: 250, perStep: 2250 },
         { min: 251, max: 500, perStep: 1250 },
         { min: 501, max: 750, perStep: 1000 },
@@ -155,13 +160,13 @@ const PricingTable: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-8 sm:px-6 md:px-4 py-5 md:py-16" id="pricing">
+    <div className="w-full max-w-7xl mx-auto px-8 sm:px-6 md:px-4 py-16" id="pricing">
       <div className="text-center mb-10">
         <div className="flex gap-2 justify-center">
           {/* <span className="mt-1 text-2xl text-[#fd5a8b] lg:text-4xl">
             <SiMoneygram />
           </span> */}
-          <h1 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gray-900">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
             Subscription Options
           </h1>
         </div>
@@ -172,11 +177,11 @@ const PricingTable: React.FC = () => {
         {plans.map(plan => (
           <div
             key={plan.name}
-            className={`relative bg-white rounded border ${plan.highlighted ? 'border-sky-600 shadow-lg' : 'border-gray-200 shadow'} hover:shadow-xl transition-all`}
+            className={`relative bg-white rounded border ${plan.highlighted ? 'border-sky-700 shadow-lg' : 'border-gray-200 shadow'} hover:shadow-xl transition-all`}
           >
             {plan.tag && (
               <div className="absolute top-5 right-0">
-                <span className="bg-sky-500 text-white px-3 py-1 rounded-l-full text-sm font-medium shadow-sm">
+                <span className="bg-sky-600 text-white px-3 py-1 rounded-l-full text-sm font-medium shadow-sm">
                   {plan.tag}
                 </span>
               </div>
@@ -184,14 +189,13 @@ const PricingTable: React.FC = () => {
             <div className="p-5 lg:p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h2>
               <p className="text-gray-600 mb-4">{plan.desc}</p>
-             
-              <div className="mb-4">
-
-                <div className="text-xl font-semibold mt-2 mb-2 text-gray-800">
+  <div className="text-xl font-semibold mt-2 text-gray-800">
                   ₹{calculatePrice(plan.name, sliderValues[plan.name])}{' '}
                   <span className="text-sm text-gray-500">/Yearly</span>
                 </div>
-                 {/* Slider */}
+              {/* Slider */}
+              <div className="mb-4">
+            
                 <input
                   type="range"
                   min={100}
@@ -203,9 +207,10 @@ const PricingTable: React.FC = () => {
                   }
                   className="w-full accent-sky-600"
                 />
-             <label className="text-sm text-gray-600 block mb-1">
-                    Instrument Range: {sliderValues[plan.name]}
+                  <label className="text-sm text-gray-600 block mb-1">
+                  Instrument Range: {sliderValues[plan.name]}
                 </label>
+              
               </div>
 
               <a
@@ -225,23 +230,13 @@ const PricingTable: React.FC = () => {
               <div className={`transition-all duration-300 ${expandedPlans[plan.name] ? 'block' : 'hidden'} md:block`}>
                 <h3 className="font-medium text-gray-900 mb-4 md:mt-4">Key features :</h3>
                 <div className="space-y-3">
-                  {plan.name === 'Pro' ? (
-                    <p className="text-gray-700">
-                      Includes all features in <strong>Basic Plus</strong> + <strong> MSA 4th Edition support</strong> and enterprise-grade control.
-                    </p>
-                    
-                  ) : (
-                    <>
-                      {FeatureList(features, getFeatureKey(plan.name), plan.name)}
-                    </>
-                  )}
-
-                     <a
-                        href={plan.buttonlink}
-                        className={`${plan.buttonClass} flex sm:hidden justify-center w-full py-2 rounded-lg font-medium shadow-sm hover:shadow text-center mb-5`}
-                      >
-                        {plan.buttonText}
-                      </a>
+                  {renderFeatureList(features, getFeatureKey(plan.name), plan.name)}
+                  <a
+                    href={plan.buttonlink}
+                    className={`${plan.buttonClass} flex sm:hidden justify-center w-full py-2 rounded-lg font-medium shadow-sm hover:shadow text-center mb-5`}
+                  >
+                    {plan.buttonText}
+                  </a>
                 </div>
               </div>
             </div>

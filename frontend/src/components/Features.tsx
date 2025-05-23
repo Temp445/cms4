@@ -22,16 +22,17 @@ const features = [
     title: 'Smart Internal Calibration – Parameter by Parameter',
     description: 'Do internal calibration with auto-filled results—no more typing the same thing again and again.',
   },
+   {
+    icon: icon4,
+    title: 'QR / Bar Code Stickers for Every Instrument',
+    description: 'Generate, print, and stick codes—just scan to instantly view all instrument details. No more searching.',
+  },
   {
     icon: icon3,
     title: 'MSA 4th Edition Done in Minutes',
     description: 'Manual MSA takes hours—ACE CMS does it in minutes, fully industry compliant.',
   },
-  {
-    icon: icon4,
-    title: 'QR / Bar Code Stickers for Every Instrument',
-    description: 'Generate, print, and stick codes—just scan to instantly view all instrument details. No more searching.',
-  },
+ 
   {
     icon: icon5,
     title: 'Android App for On-the-Go Access',
@@ -62,7 +63,7 @@ const features = [
 const Features = () => {
   return (
     <div className="py-10 md:py-16   md:mt-10" id="features">
-      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 container mx-auto relative">
+      <div className=" px-4 sm:px-6 lg:px-8 container mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 ">
             What We Offer
