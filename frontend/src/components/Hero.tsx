@@ -141,14 +141,10 @@ const Hero = () => {
             <div className="w-full text-center lg:text-left order-2 lg:order-1">
               <div className="max-w-2xl mx-auto lg:mx-0 space-y-8">
                 <div className="space-y-4">
-                  <h1 className='md:hidden text-2xl text-white font-bold'>Streamline Your Calibration Processes with ACE CMS</h1>
-                  <h1 className=" hidden md:block text-4xl md:text-5xl xl:text-6xl font-black text-white leading-tight">
-                    <span className="block">Streamline Your</span>
-                    <span className="block text-cyan-400">Calibration Processes</span>
-                    <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
-                      with <span className="relative text-white">ACE CMS
-                        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-cyan-400 rounded-full" />
-                      </span>
+                  <h1 className='md:hidden text-2xl text-white font-bold text-center'>Streamline Calibration Management and Ensure Compliance with ACE CMS</h1>
+                  <h1 className=" hidden md:block text-4xl md:text-5xl xl:text-5xl font-black text-white leading-tight">
+                    Streamline Calibration Management and Ensure Compliance with <span className='relative text-white'>ACE CMS
+                       <div className="absolute -bottom-2 left-0 right-0 h-1 bg-cyan-400 rounded-full" />
                     </span>
                   </h1>
                 </div>
