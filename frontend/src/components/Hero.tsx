@@ -14,11 +14,9 @@ import image from '../assets/Group.svg';
 import image1 from '../assets/Group1.svg';
 import image3 from '../assets/Group3.svg';
 import image5 from '../assets/Group6.png';
-// import image7 from '../assets/Group7.png';
-// import object from '../assets/object.png';
 import tool from '../assets/Tools.png';
 import gear from '../assets/Gears.png';
-// import icon from '../assets/icon3.png';
+
 const Hero = () => {
   return (
     <div className="relative min-h-fit overflow-hidden bg-blue-600" id="top">
@@ -54,17 +52,7 @@ const Hero = () => {
             <Image src={image5} alt="icon" className="w-10 h-10 opacity-70" width={12} height={12} />
           </div>
         </div>
-        {/* <div className="hidden 2xl:block absolute right-0 bottom-0">
-          <div className="relative">
-            <div className="absolute inset-0  " />
-            <Image src={object} alt="icon" className="relative w-48 h-48 xl:w-56 xl:h-56 " width={224} height={224} />
-          </div>
-        </div> */}
-        {/* <div className="hidden lg:block absolute right-48 bottom-8">
-          <div className="w-14 h-14 bg-orange-600/20 border border-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-            <Image src={gear} alt="" className="w-10 h-10 opacity-80" width={40} height={40} />
-          </div>
-        </div> */}
+       
         <div className="hidden lg:block absolute top-32 2xl:top-44 left-[800px]">
           <div className="w-28 h-px bg-white/30" />
         </div>
@@ -134,7 +122,6 @@ const Hero = () => {
     </div>
   </div>
 </div>
-
               </div>
             </div>
 
@@ -142,7 +129,7 @@ const Hero = () => {
               <div className="max-w-2xl mx-auto lg:mx-0 space-y-8">
                 <div className="space-y-4">
                   <h1 className='md:hidden text-2xl text-white font-bold text-center'>Streamline Calibration Management and Ensure Compliance with ACE CMS</h1>
-                  <h1 className=" hidden md:block text-4xl md:text-5xl xl:text-5xl font-black text-white leading-tight">
+                  <h1 className=" hidden md:block text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-black text-white leading-tight">
                     Streamline Calibration Management and Ensure Compliance with <span className='relative text-white'>ACE CMS
                        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-cyan-400 rounded-full" />
                     </span>

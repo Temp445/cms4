@@ -109,7 +109,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <FileText className="w-4 h-4 mr-2" />
-                Book A Demo
+                Contact Us
               </Link>
 
               <Link
@@ -154,7 +154,7 @@ const Navbar: FC = () => {
         </Link>
 
         <Link
-          href="#contact"
+          href="/BookDemo"
           className="flex flex-col items-center justify-center text-gray-600"
         >
           <div className="w-12 h-12  bg-gradient-to-r from-blue-500 to-blue-400 flex items-center justify-center">

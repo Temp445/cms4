@@ -9,12 +9,12 @@ const CalendlyEmbed = () => {
 const url = "https://calendly.com/acetemp345/30min";
 
   return (
- <div className="bg-gray-900" >
-  <div className="container mx-auto">
+ <div className="bg-gray-900 max-h-screen" >
+  <div className="container mx-auto" >
     <Header/>
   </div>
   <h1 className="mt-10 text-xl md:text-2xl font-bold md:font-extrabold  text-center text-shadow-lg/20 text-white">Book A Free Demo Now!</h1>
-     <div className="">
+     <div className="pb-32">
       <InlineWidget url= {url}/>
     </div>
  </div>

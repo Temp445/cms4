@@ -24,7 +24,7 @@ const Scenario = () => {
             and your auditors are impressed. Your team stays calm, focused, and confident that everything is in order.
           </p>
 <div className='mt-10'>
-          <Link href="#contact"  className='mt-6 p-2 rounded bg-sky-600 text-white '>Book A Demo</Link>
+          <Link href="/BookDemo"  className='mt-6 p-2 rounded bg-sky-600 text-white '>Book A Demo</Link>
 </div>
         </div>
 

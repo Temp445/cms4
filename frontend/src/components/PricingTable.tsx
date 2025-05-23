@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-// import { SiMoneygram } from 'react-icons/si';
+
 import { LuSquareArrowOutUpRight } from 'react-icons/lu';
 
 interface Feature {
@@ -51,8 +51,8 @@ const PricingTable: React.FC = () => {
     {
       name: 'Essential',
       desc: 'Best for calibration beginners',
-      buttonText: 'Subscribe Now',
-      buttonlink: '#',
+      buttonText: 'Contact Us',
+      buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: false,
       tag: '',
@@ -60,8 +60,8 @@ const PricingTable: React.FC = () => {
     {
       name: 'Standard',
       desc: 'For growing teams needing automation',
-      buttonText: 'Subscribe Now',
-      buttonlink: '#',
+      buttonText: 'Contact Us',
+      buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: true,
       tag: 'Smart Choice',
@@ -69,8 +69,8 @@ const PricingTable: React.FC = () => {
     {
       name: 'Pro',
       desc: 'For large teams needing full control',
-      buttonText: 'Subscribe Now',
-      buttonlink: '#',
+      buttonText: 'Contact Us',
+      buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: false,
       tag: 'Full Access',
@@ -163,9 +163,6 @@ const PricingTable: React.FC = () => {
     <div className="w-full max-w-7xl mx-auto px-8 sm:px-6 md:px-4 py-16" id="pricing">
       <div className="text-center mb-10">
         <div className="flex gap-2 justify-center">
-          {/* <span className="mt-1 text-2xl text-[#fd5a8b] lg:text-4xl">
-            <SiMoneygram />
-          </span> */}
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
             Subscription Options
           </h1>

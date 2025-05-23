@@ -122,6 +122,7 @@ const Form: React.FC = () => {
                   />
                 </div>
               </div>
+          
             
 
               <label htmlFor="location" className="lg:text-lg font-medium">Location :</label>
@@ -131,6 +132,19 @@ const Form: React.FC = () => {
                 placeholder="Location"
                 className="text-sm md:text-[16px] border p-2 mt-1 rounded w-full focus:outline-none focus:ring-2 focus:ring-red-100" />
 
+                <div className="flex flex-wrap gap-2 w-full">
+                            <label className="lg:text-lg font-medium">
+                                Product Interested:
+                            </label>
+                            <input
+                                type="text"
+                                name="Product"
+                                defaultValue="ACE CMS"
+                                readOnly
+                                className="lg:text-lg font-semibold"
+                                aria-label="Product Interested"
+                            />
+                        </div>
 
               <label className="lg:text-lg font-medium">Queries : </label>
               <textarea
@@ -186,7 +200,7 @@ const Form: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-lg text-white ">Call Us</h4>
                   <p className=" mt-1 text-white text-sm md:test-base ">+91 9840137210</p>
-                  <p className="opacity-90 text-white text-sm md:test-base ">Mon-sat from 10am to 6:30pm</p>
+                  <p className="opacity-90 text-white text-sm md:test-base ">Mon-Sat from 10am to 6:30pm</p>
                 </div>
               </div>
               
@@ -196,7 +210,7 @@ const Form: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg text-white ">Visit Us</h4>
-                  <p className="mt-1 text-white text-sm md:text-base ">#306, 2nd Floor NSIC - Software Technology Business Park B 24, Guindy Industrial Estate Ekkaduthangal, Chennai - 600032</p>
+                  <p className="mt-1 text-white text-sm md:text-base ">#306, 2nd Floor NSIC - Software Technology Business Park B 24, Guindy Industrial Estate Ekkatuthangal, Chennai - 600032</p>
 
                 </div>
               </div>
